@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Task manager</title>
+</head>
+<body>
+    <div>
+        <h2>Task manager</h2>
+        <form>
+            <label for="newTask">Enter new task</label>
+            <input type="text" id="newTask">
+            <button>Add</button>
+        </form>
+        <div class="tasks">
+            <% tasks.forEach((task)=>{
+                %>
+                    <div class="<%=task.done%> added--task">
+                        <input type="checkbox" class="<%=task._id%> checkbox">
+                        <span class="taskName"><%=task.taskName%></span>
+                        <form 
+                        class="deleteForm " 
+                        style="display: inline-block;"
+                        method="post"
+                        action="/delete?_method=DELETE&_id=<%=task._id%>"
+                        >
+                            <button class=" deleteForm "  id="<%=task._id%>">❌</button>
+                        </form>
+                    </div>
+                <%});
+            %>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
