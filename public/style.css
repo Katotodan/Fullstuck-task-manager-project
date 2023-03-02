@@ -7,7 +7,7 @@ body{
     background-color: bisque;
 }
 .container{
-    width: 50%;
+    width: 70%;
     margin: 0 auto;
 }
 .container h2{
@@ -52,3 +52,34 @@ label{
 hr{
     margin: 0 2rem 0.5rem 2rem;
 }
+@media screen and (max-width: 964px) {
+    .container{
+        width: 90%;
+    }
+}
+@media screen and (max-width: 818px) {
+    .container{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 600px) {
+    .tasks .added--task{
+        margin: 0 0 0.5rem 0;
+        padding: 0 1rem;
+    }
+}
+@media screen and (max-width: 427px) {
+    .taskName{
+        width: 80%;
+    }
+    .addTask--form input{
+        display: block;
+        margin: 0 auto;
+        width: 90%;
+        margin-bottom: 1rem;
+    }
+    .addTask--form button{
+        width: 90%;
+    }
+}
+
