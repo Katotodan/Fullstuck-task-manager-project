@@ -8,12 +8,12 @@
     <title>Task manager</title>
 </head>
 <body>
-    <div>
+    <div class="container">
         <h2>Task manager</h2>
-        <form>
-            <label for="newTask">Enter new task</label>
-            <input type="text" id="newTask">
-            <button>Add</button>
+        <form class="addTask--form">
+            <label for="newTask">Enter a new task</label>
+            <input type="text" id="newTask" required>
+            <button type="submit">Add</button>
         </form>
         <div class="tasks">
             <% tasks.forEach((task)=>{
@@ -23,13 +23,14 @@
                         <span class="taskName"><%=task.taskName%></span>
                         <form 
                         class="deleteForm " 
-                        style="display: inline-block;"
                         method="post"
                         action="/delete?_method=DELETE&_id=<%=task._id%>"
                         >
                             <button class=" deleteForm "  id="<%=task._id%>">❌</button>
                         </form>
+                       
                     </div>
+                    <hr>
                 <%});
             %>
         </div>

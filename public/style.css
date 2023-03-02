@@ -1,0 +1,54 @@
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: bisque;
+}
+.container{
+    width: 50%;
+    margin: 0 auto;
+}
+.container h2{
+    margin: 2rem 0;
+    text-align: center;
+}
+.addTask--form{
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+label{
+    display: block;
+    margin-bottom: 0.5rem;
+}
+.addTask--form input{
+    width: 70%;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+.addTask--form button{
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+/* Task style start */
+.tasks .added--task{
+    margin: 0 0 0.5rem 0;
+    padding: 0 2rem;
+}
+.tasks .added--task .checkbox{
+    vertical-align: top;
+    margin-top: 3px;
+}
+
+.tasks .added--task form{
+    float: right;
+}
+.taskName{
+    display: inline-block;
+    width: 90%;
+    word-wrap: break-word;
+}
+hr{
+    margin: 0 2rem 0.5rem 2rem;
+}

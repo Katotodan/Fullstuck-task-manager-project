@@ -13,7 +13,8 @@ app.use(methodOverride('_method'))
 
 app.get('/', async(req,res) =>{
     try {
-        const task = await taskModel.find({})
+        let task = await taskModel.find({})
+        task.reverse()
         res.render('home', {tasks : task})
     } catch (error) {
         res.render('home', {tasks : ""})
@@ -27,7 +28,7 @@ app.post('/add', async (req,res) =>{
         res.redirect('/')
     } catch (error) {
         console.log('Something went wrong')
-        res.render('home', {tasks : ""})
+        res.redirect('/')
     }
     
 })
@@ -38,7 +39,7 @@ app.delete('/delete', async (req,res) =>{
         res.redirect('/')  
     } catch (error) {
         console.log(error)
-        
+        res.redirect('/') 
     }
     
 })
@@ -59,5 +60,5 @@ const startServer = async() =>{
 }
 startServer()
 
-// Sorting and styling
+// Sorting
 
